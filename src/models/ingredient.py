@@ -61,9 +61,3 @@ class Ingredient:
 
     def __repr__(self) -> str:
         return f"Ingredient('{self.name}')"
-    
-
-ingrediente1 = Ingredient("tomate")
-ingrediente3 = Ingredient("farinha")
-ingrediente2 = Ingredient("tomate")
-print(ingrediente1.__hash__() == ingrediente2.__hash__())

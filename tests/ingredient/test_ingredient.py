@@ -22,7 +22,7 @@ def test_ingredient():
     assert ingrediente1.__repr__() != ingrediente2.__repr__()
 
     "Verifica se retorna o valor correto ao acessar o método __repr__"
-    assert ingrediente1.__repr__() == "Ingredient(\'tomate\')"
+    assert ingrediente1.__repr__() == "Ingredient('tomate')"
 
     "Verifica se o atributo name retorna o nome correto"
     assert ingrediente1.name == 'tomate'
