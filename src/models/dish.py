@@ -39,11 +39,3 @@ class Dish:
 
     def get_ingredients(self):
         return set(self.recipe.keys())
-
-
-dish1 = Dish('mac and cheese', 10.5)
-dish2 = Dish('risotto', 15.0)
-dish3 = Dish('mac and cheese', 10.5)
-cheese = Ingredient('queijo parmesão')
-print(dish1.add_ingredient_dependency(cheese, 2))
-print(dish1.get_ingredients())
