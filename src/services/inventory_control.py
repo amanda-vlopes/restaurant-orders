@@ -28,8 +28,19 @@ class InventoryMapping:
 
     # Req 5.1
     def check_recipe_availability(self, recipe: Recipe) -> bool:
-        pass
+        ingredient_info = recipe.items()
+        if all(ingredient in self.inventory and
+               self.inventory[ingredient] >= quantity
+               for ingredient, quantity in ingredient_info):
+            return True
+        return False
 
     # Req 5.2
     def consume_recipe(self, recipe: Recipe) -> None:
-        pass
+        if self.check_recipe_availability(recipe) is False:
+            raise ValueError("Ingrediente indispinível")
+
+        ingredient_info = recipe.items()
+        for ingredient, quantity in ingredient_info:
+            new_quantity = self.inventory[ingredient] - quantity
+            self.inventory[ingredient] = new_quantity
